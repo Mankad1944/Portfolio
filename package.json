@@ -1,0 +1,12 @@
+{
+  "name": "portfolio-mern-root",
+  "version": "1.0.0",
+  "description": "Aarav Shah Portfolio SPA - Pure MERN Stack",
+  "scripts": {
+    "dev": "npm --prefix client run dev",
+    "dev:all": "start npm --prefix client run dev && start npm --prefix server run dev",
+    "build": "npm --prefix client run build",
+    "server": "npm --prefix server run dev",
+    "start": "npm --prefix server run start"
+  }
+}

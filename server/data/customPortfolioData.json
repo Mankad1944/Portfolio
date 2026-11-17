@@ -1,0 +1,362 @@
+{
+  "personal": {
+    "name": "Vanshil Mankad",
+    "shortName": "MANKAD",
+    "role": "Full-Stack Developer & Digital Creator",
+    "eyebrow": "Available for meaningful opportunities",
+    "taglineLine1": "Building digital",
+    "taglineAccent": "things that",
+    "taglineSerif": " matter.",
+    "bio": "Namaste! I'm Aarav — a full-stack developer who enjoys turning thoughtful ideas into useful, human-friendly digital experiences.",
+    "location": "Based in Ahmedabad, India · Open to collaboration",
+    "locationShort": "Ahmedabad, Gujarat, India",
+    "email": "careers@mankad.com",
+    "phone": "+91 98765 43210",
+    "stamp": [
+      "CRAFTED",
+      "WITH ♥",
+      "IN INDIA"
+    ],
+    "badge": {
+      "label": "CURRENTLY BUILDING",
+      "title": "Ideas → Impact"
+    },
+    "socials": [
+      {
+        "name": "GitHub",
+        "url": "https://github.com/",
+        "icon": "github"
+      },
+      {
+        "name": "LinkedIn",
+        "url": "https://www.linkedin.com/",
+        "icon": "linkedin"
+      },
+      {
+        "name": "Email",
+        "url": "mailto:aarav@example.com",
+        "icon": "mail"
+      }
+    ],
+    "customAvatarUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1csWOT00LBrAa1dLlzfk2ZnlJw5PL33nqZ43XA4A663qbuyD69AX_65M&s=10"
+  },
+  "tickerItems": [
+    "Curiosity",
+    "Code with care",
+    "Learn every day",
+    "Make it useful",
+    "Made in India",
+    "MERN Stack Craftsman",
+    "Pixel & Performance Obsessed"
+  ],
+  "about": {
+    "sectionNum": "01",
+    "eyebrow": "A little introduction",
+    "label": "THE PERSON BEHIND THE PIXELS",
+    "lead": "Good technology should feel simple, even when the thinking behind it isn't.",
+    "paragraphs": [
+      "I'm a curious developer from Gujarat, India, interested in building across the web — from clean interfaces and responsive frontends to APIs, databases and the logic that connects everything.",
+      "I value clear communication, steady learning and practical problem-solving. Outside the code editor, you'll find me exploring design details, learning new tools or enjoying a strong cup of chai."
+    ],
+    "facts": [
+      {
+        "stat": "03+",
+        "label": "Years learning"
+      },
+      {
+        "stat": "08",
+        "label": "Projects explored"
+      },
+      {
+        "stat": "04+",
+        "label": "Clients & collaborations"
+      },
+      {
+        "stat": "03",
+        "label": "Regional languages"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "name": "HTML & CSS",
+      "desc": "Structure · Styling",
+      "icon": "⌘",
+      "category": "frontend"
+    },
+    {
+      "name": "JavaScript",
+      "desc": "Interaction · Logic",
+      "icon": "⚡",
+      "category": "frontend"
+    },
+    {
+      "name": "React",
+      "desc": "Component UI",
+      "icon": "⚛",
+      "category": "frontend"
+    },
+    {
+      "name": "Node.js",
+      "desc": "Backend runtime",
+      "icon": "⬡",
+      "category": "backend"
+    },
+    {
+      "name": "Express",
+      "desc": "REST APIs",
+      "icon": "◈",
+      "category": "backend"
+    },
+    {
+      "name": "MongoDB",
+      "desc": "Document database",
+      "icon": "🍃",
+      "category": "backend"
+    },
+    {
+      "name": "MySQL",
+      "desc": "Relational data",
+      "icon": "▤",
+      "category": "backend"
+    },
+    {
+      "name": "Python",
+      "desc": "Automation · Basics",
+      "icon": "🐍",
+      "category": "tools"
+    },
+    {
+      "name": "Git & GitHub",
+      "desc": "Version control",
+      "icon": "◉",
+      "category": "tools"
+    },
+    {
+      "name": "Figma",
+      "desc": "UI exploration",
+      "icon": "✳",
+      "category": "tools"
+    },
+    {
+      "name": "Tailwind CSS",
+      "desc": "Utility styling",
+      "icon": "▧",
+      "category": "frontend"
+    },
+    {
+      "name": "REST APIs",
+      "desc": "Integration & Microservices",
+      "icon": "◎",
+      "category": "backend"
+    }
+  ],
+  "experience": [
+    {
+      "period": "2023 – PRESENT",
+      "role": "Senior Frontend Engineer",
+      "company": "Bharat Pay Labs · Bengaluru",
+      "desc": "Led the redesign of a UPI payments dashboard, cut page load by 45% and shipped Hindi, Gujarati and Marathi support for 1.2 lakh merchants.",
+      "tags": [
+        "React",
+        "Performance",
+        "Localization",
+        "State Management"
+      ],
+      "highlight": "Cut page load by 45% across low-bandwidth tiers"
+    },
+    {
+      "period": "2021 – 2023",
+      "role": "Full Stack Developer",
+      "company": "Saathi EdTech · Pune",
+      "desc": "Built a vernacular learning platform with live classes, offline mode and voice quizzes that reached students in over 400 towns across India.",
+      "tags": [
+        "Full Stack",
+        "Node.js",
+        "EdTech",
+        "Offline-first",
+        "WebSockets"
+      ],
+      "highlight": "Reached 400+ tier-2/3 towns with offline mode"
+    },
+    {
+      "period": "2019 – 2021",
+      "role": "Software Engineer",
+      "company": "Navrang Softworks · Ahmedabad",
+      "desc": "Developed e-commerce tools for textile traders of Surat, automated GST invoicing and reduced manual billing work by 60%.",
+      "tags": [
+        "E-commerce",
+        "GST Invoicing",
+        "Automation",
+        "MongoDB"
+      ],
+      "highlight": "Automated billing workflow saving 60% manual time"
+    },
+    {
+      "period": "2019",
+      "role": "Engineering Intern",
+      "company": "Gujarat Technological University Labs",
+      "desc": "Prototyped an IoT crop-monitoring dashboard for farmers as part of the final year project.",
+      "tags": [
+        "IoT",
+        "Dashboard",
+        "Agriculture",
+        "Python"
+      ],
+      "highlight": "Prototyped multi-sensor telemetry dashboard"
+    }
+  ],
+  "projects": [
+    {
+      "id": "01",
+      "category": "WEB PLATFORM",
+      "title": "SafarSetu",
+      "desc": "A travel discovery concept bringing transport, stays, food and local experiences together in one simple journey planner.",
+      "tags": [
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Maps API",
+        "Express"
+      ],
+      "type": "Personal · Full stack",
+      "caseStudy": {
+        "problem": "Travelers in India often have to toggle across 5-6 apps for state transport, local homestays, hidden food gems, and cultural attractions.",
+        "solution": "SafarSetu aggregates unified itineraries with vernacular language support, interactive offline maps, and cost estimators for group travelers.",
+        "features": [
+          "Interactive itinerary planner with drag-and-drop days",
+          "Integrated regional transport schedule feeds",
+          "Local homestays and community culinary trails",
+          "Offline caching for low connectivity remote areas"
+        ],
+        "github": "https://github.com/example/safarsetu",
+        "demo": "https://safarsetu-demo.example.com"
+      },
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz1LvSjK0OOCDsHTbPP4zrP8veh1u_iKzKRDjYs37csw&s=10"
+    },
+    {
+      "id": "02",
+      "category": "MOBILITY",
+      "title": "VH Taxi Go",
+      "desc": "An EV rental and ride-booking prototype exploring passenger and driver workflows, trip updates and verification.",
+      "tags": [
+        "MERN",
+        "JWT",
+        "Socket.IO",
+        "REST API",
+        "Redis"
+      ],
+      "type": "Personal · Team-ready",
+      "caseStudy": {
+        "problem": "EV fleet operators struggle with vehicle battery range forecasting and synchronous driver-rider dispatching.",
+        "solution": "Engineered a real-time tracking engine using Socket.io and Redis geospatial indexes that computes accurate battery endurance alongside route pricing.",
+        "features": [
+          "Live vehicle telematics and telemetry simulator",
+          "Instant driver assignment via nearest-radius indexing",
+          "Secure JWT authentication with role-based access control",
+          "Trip verification QR codes and automated invoicing"
+        ],
+        "github": "https://github.com/example/vh-taxi-go",
+        "demo": "https://vh-taxi-go.example.com"
+      }
+    },
+    {
+      "id": "03",
+      "category": "DATA & ANALYTICS",
+      "title": "Cricket Analytics",
+      "desc": "A cricket data exploration dashboard concept for turning match information into useful insights for players and analysts.",
+      "tags": [
+        "React",
+        "Node.js",
+        "MySQL",
+        "Python",
+        "Chart.js"
+      ],
+      "type": "Academic · Analytics",
+      "caseStudy": {
+        "problem": "Grassroots coaches and tournament organizers lack access to interactive ball-by-ball analysis tools used by elite teams.",
+        "solution": "Developed a high-performance analytics portal processing historical ball-by-ball IPL and Ranji Trophy metrics with interactive wagon wheels and pitch heatmaps.",
+        "features": [
+          "Interactive strike-rate vs dot-ball ratio comparison",
+          "Player match-up predictor against bowler types",
+          "Custom tournament leaderboards and PDF match reports",
+          "Fast SQL indexing for million-record query responses"
+        ],
+        "github": "https://github.com/example/cricket-analytics",
+        "demo": "https://cricket-analytics.example.com"
+      }
+    },
+    {
+      "id": "04",
+      "category": "CREATIVE TOOL & AI",
+      "title": "PixRevive",
+      "desc": "A photo restoration application concept focused on helping people preserve and revisit meaningful memories.",
+      "tags": [
+        "Python",
+        "AI / ML",
+        "MongoDB",
+        "React",
+        "Canvas API"
+      ],
+      "type": "Personal · AI",
+      "caseStudy": {
+        "problem": "Old family vintage photographs suffer from color fading, creasing, and noise degradation over generations.",
+        "solution": "Created an accessible browser tool where users can upload heritage photos, preview side-by-side restoration filters, and repair scratches with client-side canvas shaders and AI backends.",
+        "features": [
+          "Interactive split-slider before/after visual comparison",
+          "Colorization pipeline with skin-tone fidelity adjustments",
+          "Scratch removal and high-resolution upscaling",
+          "Zero-retention private processing guaranteeing user privacy"
+        ],
+        "github": "https://github.com/example/pixrevive",
+        "demo": "https://pixrevive.example.com"
+      }
+    }
+  ],
+  "recognition": {
+    "achievements": [
+      {
+        "icon": "🏆",
+        "year": "2025 · SAMPLE",
+        "title": "Inter-college Hackathon Finalist",
+        "desc": "Collaborated with a team of 4 to prototype an emergency response alert system under an intensive 36-hour challenge."
+      },
+      {
+        "icon": "💡",
+        "year": "2024 · SAMPLE",
+        "title": "Project Showcase Recognition",
+        "desc": "Presented an academic web application focused on practical usability, low-bandwidth optimization, and clean architectural design."
+      },
+      {
+        "icon": "🌱",
+        "year": "ONGOING",
+        "title": "Open-source & Community Learning",
+        "desc": "Learning in public, contributing bug fixes to developer documentation, and sharing learnings across tech communities."
+      }
+    ],
+    "certifications": [
+      {
+        "icon": "📜",
+        "year": "2025 · SAMPLE",
+        "title": "Full-Stack Web Development",
+        "desc": "Comprehensive MERN curriculum covering distributed architectures, secure authentication, and CI/CD deployment pipelines.",
+        "id": "CERT-MERN-88941",
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsaqPIlaxwVOeyNX9jq5ILYoUBf2U7M0amP8D4iymnmA&s=10"
+      },
+      {
+        "icon": "🔐",
+        "year": "2024 · SAMPLE",
+        "title": "Introduction to Cybersecurity",
+        "desc": "Foundations of OWASP Top 10 vulnerabilities, API security, input sanitization, and transport layer encryption protocols.",
+        "id": "CERT-SEC-31082"
+      },
+      {
+        "icon": "📊",
+        "year": "2024 · SAMPLE",
+        "title": "Data Analytics Foundations",
+        "desc": "Relational data modeling, query optimization, exploratory analysis, and visualization principles.",
+        "id": "CERT-DATA-55420"
+      }
+    ]
+  }
+}
