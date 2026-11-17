@@ -1,131 +1,137 @@
-# Aarav Shah — Full-Stack Developer Portfolio SPA (Pure MERN Stack)
+# Vanshil Mankad — Portfolio SPA (Pure MERN Stack)
 
-A modern, high-performance, single-page application (SPA) portfolio website built with the **pure MERN stack** (MongoDB, Express, React, Node.js), adapted from the provided design and enhanced with rich interactivity, interactive modals, responsive animations, and a real-time contact system.
+A production-ready, fully animated personal portfolio built with the **MERN Stack** (MongoDB · Express · React · Node.js).
 
----
-
-## 🎨 5 Curated Color Themes (Light & Dark Mode)
-
-The application features full runtime theme switching across all 5 curated palettes, with **Theme 1 (Minimalist Slate & Electric Indigo)** as the primary suited aesthetic for full-stack developers:
-
-1. **Minimalist Slate & Electric Indigo** *(Clean & Technical — Default)*
-   - **Light:** `#F8FAFC` bg, `#FFFFFF` cards, `#E2E8F0` border, `#0F172A` text, `#4F46E5` primary accent, `#0EA5E9` secondary accent
-   - **Dark:** `#090D16` bg, `#111827` cards, `#1E293B` border, `#F8FAFC` text, `#6366F1` primary accent, `#38BDF8` secondary accent
-2. **Cinematic Obsidian & Warm Amber** *(Editorial & Bold)*
-   - **Light:** `#FAF9F6` bg, `#FFFFFF` cards, `#E7E5E4` border, `#1C1917` text, `#D97706` primary accent, `#0D9488` secondary accent
-   - **Dark:** `#0A0A0A` bg, `#141414` cards, `#262626` border, `#FAFAFA` text, `#F59E0B` primary accent, `#2DD4BF` secondary accent
-3. **Nordic Sage & Terracotta** *(Organic & Approachable)*
-   - **Light:** `#F4F6F4` bg, `#FFFFFF` cards, `#DCE2DD` border, `#1A241E` text, `#2D6A4F` primary accent, `#E07A5F` secondary accent
-   - **Dark:** `#0E1310` bg, `#161E19` cards, `#25332B` border, `#EDF2EE` text, `#52B788` primary accent, `#F28482` secondary accent
-4. **Monochrome Zinc & Acid Lime** *(High-Contrast & Avant-Garde)*
-   - **Light:** `#F4F4F5` bg, `#FFFFFF` cards, `#D4D4D8` border, `#18181B` text, `#18181B` primary accent, `#84CC16` highlight
-   - **Dark:** `#09090B` bg, `#121215` cards, `#27272A` border, `#FAFAFA` text, `#A3E635` primary accent, `#E4E4E7` secondary accent
-5. **Midnight Plum & Rose Coral** *(Creative & Expressive — from `index (2).html`)*
-   - **Light:** `#FDFCFE` bg, `#FFFFFF` cards, `#EAE4F2` border, `#1E162B` text, `#7C3AED` primary accent, `#F43F5E` secondary accent
-   - **Dark:** `#0D0A14` bg, `#171224` cards, `#2A213D` border, `#F5F3FF` text, `#A78BFA` primary accent, `#FB7185` secondary accent
-
-> **Instant Theme Switcher:** Click the palette pill in the navigation header to switch between any of the 5 palettes, and use the Sun/Moon button to toggle Light/Dark mode. Preferences are saved automatically to `localStorage`.
+**Live:** [vanshilmankad.vercel.app](https://vanshilmankad.vercel.app) &nbsp;|&nbsp; **API:** [portfolio-vanshil.onrender.com](https://portfolio-vanshil.onrender.com/api/health)
 
 ---
 
-## 🏗️ Project Architecture
+## ✨ Features
+
+- 🎨 **5 Color Themes** (Light & Dark) — switchable from Admin Dashboard
+- 🔤 **5 Font Themes** — switchable from Admin Dashboard
+- 🕹️ **Admin Dashboard** — edit all content, images, colors, fonts, ticker, experience, projects
+- 🗂️ **Stacked Project Cards** with retreat animation
+- 🛤️ **Horizontal Scrolling Timeline** (Experience) — sticky, pin-on-scroll
+- 🔢 **Animated KPI Counters** in About section
+- 📧 **Contact Form** wired to MongoDB via Express API
+- 🔒 **Security Headers** + HTTPS (dev) / Render TLS (production)
+- 📱 **Fully Responsive** — mobile, tablet, desktop
+
+---
+
+## 🏗️ Project Structure
 
 ```
 portfolio1/
-├── index (2).html            # Original reference design
-├── package.json              # Root project scripts
-├── client/                   # React 19 + Vite Frontend SPA
-│   ├── index.html            # HTML entry point with DM Sans, Manrope, DM Mono
-│   ├── vite.config.js        # Vite config with API proxy to localhost:5000
-│   ├── package.json          # Frontend dependencies
-│   ├── dist/                 # Production build bundle
-│   └── src/
-│       ├── main.jsx          # React DOM entry point
-│       ├── App.jsx           # Master SPA composition
-│       ├── context/
-│       │   └── ThemeContext.jsx # 5 Theme palettes + Light/Dark mode provider
-│       ├── styles/
-│       │   └── index.css     # CSS design tokens & animations
-│       ├── data/
-│       │   └── portfolioData.js # Structured content, projects, experience
-│       └── components/
-│           ├── Navbar.jsx    # Responsive header with brand & drawer
-│           ├── ThemeSelector.jsx # Interactive 5-palette modal picker
-│           ├── Hero.jsx      # Scroll-driven hero zoom & CSS portrait art
-│           ├── Ticker.jsx    # Seamless infinite marquee banner
-│           ├── About.jsx     # Introduction & 4 KPI statistic cards
-│           ├── Skills.jsx    # 12 Toolkit items with category filtering
-│           ├── Journey.jsx   # Horizontal experience timeline + arrow controls
-│           ├── Projects.jsx  # Sticky stacked cards with retreat effect
-│           ├── ProjectModal.jsx # Case study modal with architecture details
-│           ├── Recognition.jsx # Achievements & verified certification milestones
-│           ├── Contact.jsx   # Interactive message form + confetti celebration
-│           ├── Footer.jsx    # Expanded sitemap & contact links
-│           └── ScrollToTop.jsx # Floating back-to-top button
-└── server/                   # Express + MongoDB Backend
-    ├── server.js             # Express app & static file server
-    ├── package.json          # Backend dependencies
-    ├── .env                  # Configuration (PORT, MONGO_URI)
-    ├── models/
-    │   ├── Message.js        # Mongoose schema for inquiries
-    │   └── Project.js        # Mongoose schema for projects
-    └── routes/
-        ├── contact.js        # POST/GET /api/contact with resilient storage
-        └── portfolio.js      # GET /api/portfolio/* endpoints
+├── client/              # Vite + React SPA
+│   ├── src/
+│   │   ├── components/  # All UI sections + Admin Dashboard
+│   │   ├── context/     # ThemeContext, PortfolioDataContext
+│   │   ├── data/        # Default portfolio content (portfolioData.js)
+│   │   └── styles/      # index.css (all CSS variables & themes)
+│   ├── vercel.json      # Vercel deployment config
+│   └── vite.config.js
+├── server/              # Express + Mongoose API
+│   ├── routes/          # contact.js, portfolio.js, admin.js
+│   └── server.js
+├── render.yaml          # Render deployment config
+├── .env.example         # Environment variable template
+└── README.md
 ```
 
 ---
 
-## 🚀 Running the Application
+## 🚀 Local Development
 
-### 1. Run Frontend Only (Vite Dev Server)
+### 1. Clone & Install
+
 ```bash
-cd client
+git clone https://github.com/Mankad1944/portfolio.git
+cd portfolio1
+
+# Install all dependencies
+npm run postinstall
+# OR manually:
+npm --prefix client install
+npm --prefix server install
+```
+
+### 2. Environment Setup
+
+```bash
+cp .env.example .env
+# Edit .env — set MONGO_URI to your MongoDB Atlas connection string
+```
+
+### 3. Run Dev Servers
+
+```bash
+# Terminal 1 — Frontend (HTTPS on https://localhost:5173)
 npm run dev
-```
-Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-### 2. Run Full MERN Stack (Backend + Client)
-```bash
-# Terminal 1: Start Express & MongoDB Server (port 5000)
-cd server
-npm start
-
-# Terminal 2: Start React Client with Proxy (port 5173)
-cd client
-npm run dev
+# Terminal 2 — Backend (http://localhost:5000)
+npm run dev:server
 ```
 
-### 3. Production Build & Unified Serving
-The client bundle has already been compiled to `client/dist`. Starting the Express server serves both the REST API and the production client:
-```bash
-cd server
-npm start
-```
-Visit [http://localhost:5000](http://localhost:5000).
+> **Note:** The frontend works standalone without the backend — it falls back to localStorage for all portfolio data. The backend only adds persistent contact form submissions and cross-device data sync.
 
 ---
 
-## 🌟 Key Features Implemented
+## 🌐 Production Deployment
 
-- **Exact faithful translation of `index (2).html`** into clean, modular React components.
-- **Admin Dashboard Portal (`/admin` trigger in Navbar)**:
-  - **Full Theme & Variable Engine**: Preset combination selector (Theme 2 Default), Light/Dark toggle, and **variable-by-variable color tuning** with live pickers for `--paper`, `--paper-2`, `--white`, `--line`, `--ink`, `--muted`, `--green`, `--orange`, and `--yellow`.
-  - **Profile & Hero Manager**: Update name, bio, tagline, contact information, and switch between original CSS Art portrait or custom image URL.
-  - **Experience Timeline Manager**: Add, edit, delete, and reorder chapters.
-  - **Project Manager**: Add, edit, delete projects, adjust direct GitHub links and Live Demo URLs.
-  - **Skills & Toolkit Manager**: Add, edit, and delete skills, icons, and categories.
-  - **Achievements & Certifications Manager**: Add, edit, and delete credentials.
-  - **Messages Inbox**: View all inquiries submitted through the contact form in real time.
-- **Alternating Experience Horizon Timeline**:
-  - Vertical-scroll driven horizontal translation gathered from `index (2).html`.
-  - Decreased compact card dimensions.
-  - Alternating layout: card 1 top (over the timeline), card 2 bottom (under the timeline), card 3 top, and so on.
-  - Pinned central horizon bar with dynamic gradient progress line.
-  - Text fill reveal effect on scroll (`background-position: 0 0`).
-  - Browser scrollbar completely removed.
-- **Enlarged Project Container in Laptop View**:
-  - Generous 1140px maximum container width.
-  - 2 direct action buttons on each project card: **Live Demo** and **GitHub Code**, alongside the deep-dive Case Study viewer.
-- **Theme 2 (Cinematic Obsidian & Warm Amber) Default**:
-  - Theme change controls removed from the titlebar and cleanly centralized in the Admin Dashboard.
+### Frontend → Vercel
+
+1. Push repo to GitHub
+2. Import the repo in [vercel.com](https://vercel.com)
+3. Set **Root Directory** to `client`
+4. Vercel auto-detects Vite — click **Deploy**
+5. After your Render backend is live, update the API rewrite URL in `client/vercel.json`:
+   ```json
+   { "source": "/api/(.*)", "destination": "https://YOUR-APP.onrender.com/api/$1" }
+   ```
+   Then redeploy.
+
+### Backend → Render
+
+1. In [render.com](https://render.com), create a new **Web Service**
+2. Connect your GitHub repo
+3. Set **Root Directory** to `server`
+4. **Build Command:** `npm install`
+5. **Start Command:** `node server.js`
+6. Add environment variable: `MONGO_URI` = your MongoDB Atlas URI
+7. Click **Deploy**
+
+> Render's free tier spins down after inactivity — the first request may take ~30 s to wake up.
+
+---
+
+## 🔑 Environment Variables
+
+| Variable | Required | Description |
+|----------|----------|-------------|
+| `MONGO_URI` | ✅ (backend) | MongoDB Atlas connection string |
+| `PORT` | — | Server port (Render sets this automatically) |
+| `NODE_ENV` | — | `production` on Render |
+| `USE_HTTPS` | — | `false` on Render (TLS handled by platform) |
+
+See [`.env.example`](.env.example) for the full template.
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Frontend | React 18, Vite, CSS Variables |
+| Animation | Intersection Observer, CSS transitions |
+| Backend | Node.js, Express 4 |
+| Database | MongoDB Atlas, Mongoose |
+| Deployment | Vercel (frontend), Render (backend) |
+| SSL/TLS | @vitejs/plugin-basic-ssl (dev), platform TLS (prod) |
+
+---
+
+## 📄 License
+
+MIT © 2024 Vanshil Mankad

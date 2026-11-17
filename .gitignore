@@ -1,0 +1,71 @@
+# ============================================================
+# ROOT .gitignore — Vanshil Mankad Portfolio (MERN)
+# ============================================================
+
+# ── Dependencies ────────────────────────────────────────────
+node_modules/
+client/node_modules/
+server/node_modules/
+
+# ── Environment & Secrets ────────────────────────────────────
+.env
+.env.local
+.env.development
+.env.production
+.env.staging
+.env.*.local
+server/.env
+client/.env
+client/.env.local
+
+# ── Build Output ─────────────────────────────────────────────
+client/dist/
+client/dist-ssr/
+*.local
+
+# ── SSL Certificates (dev-generated) ─────────────────────────
+server/ssl/
+*.pem
+*.key
+*.crt
+*.p12
+
+# ── Logs ─────────────────────────────────────────────────────
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ── OS & Editor Junk ─────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ── Vite / Build Cache ───────────────────────────────────────
+.vite/
+*.tsbuildinfo
+
+# ── Coverage & Testing ───────────────────────────────────────
+coverage/
+.nyc_output/
+
+# ── Misc ─────────────────────────────────────────────────────
+*.zip
+*.tar.gz
+*.rar

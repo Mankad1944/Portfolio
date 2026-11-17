@@ -1,16 +1,16 @@
 export const PORTFOLIO_DATA = {
   personal: {
-    name: 'Aarav Shah',
-    shortName: 'aarav',
+    name: 'Vanshil Mankad',
+    shortName: 'vanshil',
     role: 'Full-Stack Developer & Digital Creator',
     eyebrow: 'Available for meaningful opportunities',
     taglineLine1: 'Building digital',
     taglineAccent: 'things that',
     taglineSerif: ' matter.',
-    bio: "Namaste! I'm Aarav — a full-stack developer who enjoys turning thoughtful ideas into useful, human-friendly digital experiences.",
+    bio: "Hey! I'm Vanshil — a full-stack developer who enjoys turning thoughtful ideas into useful, human-friendly digital experiences.",
     location: 'Based in Ahmedabad, India · Open to collaboration',
     locationShort: 'Ahmedabad, India',
-    email: 'aarav@example.com',
+    email: 'vanshil@example.com',
     phone: '+91 98765 43210',
     stamp: ['CRAFTED', 'WITH ♥', 'IN INDIA'],
     badge: {
@@ -20,7 +20,7 @@ export const PORTFOLIO_DATA = {
     socials: [
       { name: 'GitHub', url: 'https://github.com/', icon: 'github' },
       { name: 'LinkedIn', url: 'https://www.linkedin.com/', icon: 'linkedin' },
-      { name: 'Email', url: 'mailto:aarav@example.com', icon: 'mail' },
+      { name: 'Email', url: 'mailto:vanshil@example.com', icon: 'mail' },
     ],
   },
 

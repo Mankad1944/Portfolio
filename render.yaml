@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: portfolio-vanshil
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: MONGO_URI
+        sync: false          # Set manually in Render dashboard — never commit!
+      - key: USE_HTTPS
+        value: false         # Render handles TLS termination automatically
+      # Uncomment and set after your Vercel deploy URL is known:
+      # - key: ALLOWED_ORIGINS
+      #   value: https://vanshilmankad.vercel.app

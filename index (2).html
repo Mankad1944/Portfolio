@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FDFCFE" />
+  <meta name="description" content="Aarav Shah — Full-stack developer portfolio." />
+  <title>Aarav Shah — Developer & Digital Creator</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+     :root{color-scheme:light;--paper:#FDFCFE;--paper-2:#F7F3FC;--ink:#1E162B;--muted:#5B506B;--line:#EAE4F2;--orange:#F43F5E;--green:#7C3AED;--yellow:#F9A8D4;--white:#FFFFFF;--shadow:0 18px 50px rgba(47,27,75,.10);--serif:Georgia,'Times New Roman',serif;--sans:'DM Sans',sans-serif;--display:Manrope,sans-serif;--mono:'DM Mono',monospace;--max:1160px}
+    html[data-theme="dark"]{color-scheme:dark;--paper:#0D0A14;--paper-2:#171224;--ink:#F5F3FF;--muted:#A69BB8;--line:#2A213D;--orange:#FB7185;--green:#A78BFA;--yellow:#A78BFA;--white:#171224;--shadow:0 18px 50px rgba(0,0,0,.32)}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6}a{color:inherit;text-decoration:none}button{font:inherit}.wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.eyebrow{font:500 11px var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--green)}.section{padding:112px 0;position:relative}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:48px}.section-head h2{font:800 clamp(36px,5vw,62px)/1.04 var(--display);letter-spacing:-.055em;margin:10px 0 0}.section-head p{max-width:370px;color:var(--muted);margin:0}.accent{color:var(--orange)}.serif{font-family:var(--serif);font-style:italic;font-weight:400}
+    /* navigation */
+    .nav{height:76px;position:fixed;inset:0 0 auto;z-index:20;background:rgba(251,248,241,.86);backdrop-filter:blur(16px);border-bottom:1px solid rgba(222,216,203,.7)}.nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between}.brand{font:800 19px var(--display);letter-spacing:-.06em}.brand span{color:var(--orange)}.nav-links{display:flex;gap:27px;align-items:center;font-size:12px;color:#5d5e57}.nav-links a{transition:color .2s}.nav-links a:hover{color:var(--orange)}.nav-cta{padding:10px 16px;border:1px solid var(--ink);border-radius:30px;color:var(--ink)!important}.menu-btn{display:none;border:0;background:none;font-size:23px}
+    /* hero */
+    .hero{min-height:100svh;padding:145px 0 60px;display:flex;align-items:center;overflow:hidden;position:relative}.hero:before{content:'નમસ્તે';position:absolute;right:-25px;top:115px;font:800 clamp(130px,23vw,300px)/1 var(--display);color:rgba(73,108,80,.045);pointer-events:none;white-space:nowrap}.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:55px;align-items:center;position:relative;z-index:1}.hero-kicker{display:flex;align-items:center;gap:10px;margin-bottom:26px}.dot{width:8px;height:8px;border-radius:50%;background:#5e9b65;box-shadow:0 0 0 5px rgba(94,155,101,.12)}.hero h1{font:800 clamp(54px,8vw,100px)/.98 var(--display);letter-spacing:-.075em;margin:0;max-width:720px}.hero h1 .line2{display:block;color:var(--orange)}.hero-copy{font-size:17px;color:#686961;max-width:510px;margin:27px 0 30px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.btn{display:inline-flex;align-items:center;gap:12px;padding:14px 20px;border-radius:40px;background:var(--ink);color:white;font-size:13px;font-weight:600;border:1px solid var(--ink);transition:transform .25s,background .25s}.btn:hover{transform:translateY(-3px);background:var(--orange);border-color:var(--orange)}.btn.secondary{background:transparent;color:var(--ink)}.btn.secondary:hover{color:white}.hero-note{display:flex;align-items:center;gap:15px;margin-top:52px;color:var(--muted);font:11px var(--mono);text-transform:uppercase;letter-spacing:.08em}.hero-note:before{content:'';height:1px;width:45px;background:var(--orange)}
+    .hero-art{height:510px;position:relative;display:grid;place-items:center;transform-origin:center;will-change:transform}.art-frame{width:min(100%,420px);height:455px;background:#e9dfcb;border-radius:210px 210px 24px 24px;position:relative;overflow:hidden;box-shadow:var(--shadow);border:8px solid var(--white)}.art-sun{position:absolute;width:220px;height:220px;background:var(--yellow);border-radius:50%;top:45px;left:50%;transform:translateX(-50%)}.art-hill{position:absolute;bottom:-70px;width:120%;height:260px;left:-10%;background:var(--green);border-radius:50% 50% 0 0}.art-hill:after{content:'';position:absolute;width:80%;height:180px;left:20%;top:-55px;background:#78916d;border-radius:50%}.art-person{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:180px;height:300px}.person-head{position:absolute;top:15px;left:55px;width:75px;height:88px;background:#b87950;border-radius:48% 48% 43% 43%;z-index:2}.person-hair{position:absolute;top:5px;left:47px;width:90px;height:70px;background:#29241f;border-radius:55% 55% 35% 35%;z-index:3}.person-body{position:absolute;bottom:-20px;left:10px;width:165px;height:215px;background:#f4eee1;border-radius:75px 75px 0 0;z-index:1}.person-body:after{content:'';position:absolute;inset:55px 68px 0;background:var(--orange);border-radius:35px 35px 0 0}.art-label{position:absolute;right:-5px;bottom:48px;padding:13px 17px;background:var(--white);box-shadow:var(--shadow);border-radius:12px;font:11px var(--mono);transform:rotate(-4deg)}.art-label strong{display:block;font:700 18px var(--display)}.art-stamp{position:absolute;left:-25px;top:72px;width:92px;height:92px;border:1px solid var(--orange);border-radius:50%;display:grid;place-items:center;text-align:center;color:var(--orange);font:10px var(--mono);letter-spacing:.08em;transform:rotate(-14deg);background:var(--paper)}
+    /* ticker */.ticker{border-block:1px solid var(--line);padding:17px 0;overflow:hidden;background:var(--paper-2)}.ticker-track{display:flex;gap:44px;width:max-content;animation:marquee 28s linear infinite;font:11px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#686961}.ticker-track span{display:flex;align-items:center;gap:44px}.ticker-track b{color:var(--orange);font-size:17px}@keyframes marquee{to{transform:translateX(-50%)}}
+    /* about */.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}.about-aside{position:relative}.big-number{font:800 clamp(100px,17vw,190px)/.85 var(--display);letter-spacing:-.1em;color:var(--orange)}.big-number small{font:13px var(--mono);letter-spacing:0;color:var(--muted);display:block;margin:20px 0 0 10px}.about-copy h3{font:700 clamp(26px,3vw,38px)/1.2 var(--display);letter-spacing:-.04em;margin:0 0 20px}.about-copy p{color:#696a62;font-size:15px}.about-facts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:34px}.fact{border-top:1px solid var(--line);padding-top:13px}.fact strong{display:block;font:700 24px var(--display)}.fact span{font:10px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+    /* skills */.skills-section{background:#f2eee5}.skills-intro{max-width:540px;color:var(--muted)}.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px}.skill-card{min-height:130px;border:1px solid #d8d1c4;border-radius:14px;padding:20px;background:rgba(255,253,248,.55);display:flex;flex-direction:column;justify-content:space-between;transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,border-color .3s;transform:scale(.94);opacity:.65}.skill-card.in-view{transform:scale(1);opacity:1}.skill-card:hover{transform:scale(1.045)!important;background:var(--white);border-color:var(--orange)}.skill-icon{font-size:23px}.skill-card strong{font:700 16px var(--display)}.skill-card small{font:10px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+    /* experience */.experience-list{position:relative;margin-left:9px}.experience-list:before{content:'';position:absolute;left:8px;top:5px;bottom:15px;width:1px;background:var(--line)}.experience-item{display:grid;grid-template-columns:190px 1fr;gap:55px;padding:0 0 58px 43px;position:relative}.experience-item:before{content:'';position:absolute;left:2px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--paper);border:2px solid var(--orange);z-index:1}.experience-date{font:11px var(--mono);color:var(--green);letter-spacing:.05em;padding-top:6px}.experience-content{max-width:700px}.experience-content h3{font:700 24px var(--display);letter-spacing:-.04em;margin:0}.experience-content h4{font:500 13px var(--mono);color:var(--muted);margin:5px 0 13px}.experience-content p{color:#696a62;margin:0;max-width:650px}.tag-row{display:flex;flex-wrap:wrap;gap:7px;margin-top:17px}.tag{padding:6px 10px;border:1px solid var(--line);border-radius:20px;font:10px var(--mono);color:#62635c}
+    /* projects stacked */.projects-section{background:#eae5da}.project-stack{position:relative;max-width:950px;margin:auto;padding-bottom:60px}.project-card{position:sticky;top:105px;min-height:390px;border-radius:20px;background:var(--white);border:1px solid #ded8cb;box-shadow:0 12px 35px rgba(42,36,24,.08);padding:38px;display:grid;grid-template-columns:1fr .9fr;gap:30px;overflow:hidden;margin-bottom:22px}.project-card:nth-child(2){top:125px}.project-card:nth-child(3){top:145px}.project-card:nth-child(4){top:165px}.project-index{font:11px var(--mono);color:var(--orange);letter-spacing:.1em}.project-card h3{font:800 clamp(30px,4vw,45px)/1.04 var(--display);letter-spacing:-.06em;margin:22px 0 13px}.project-card p{color:var(--muted);max-width:420px;font-size:14px}.project-visual{border-radius:14px;background:#e8e0d0;min-height:260px;display:grid;place-items:center;position:relative;overflow:hidden}.project-visual .mock-window{width:82%;height:72%;background:#fffdf8;border-radius:9px;box-shadow:0 15px 30px #564a3220;padding:14px;transform:rotate(3deg)}.mock-top{height:9px;border-bottom:1px solid #e6e0d4;display:flex;gap:4px}.mock-top i{width:5px;height:5px;border-radius:50%;background:#e7a58c}.mock-content{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:18px}.mock-content b{height:65px;border-radius:5px;background:#e8eee4}.mock-content b:nth-child(2){background:#f4dfc8}.mock-content b:nth-child(3){grid-column:span 2;height:45px;background:#e9e3d6}.project-visual.v2{background:#dce8df}.project-visual.v2 .mock-content b{background:#234f3c}.project-visual.v2 .mock-content b:nth-child(2){background:#e6b75e}.project-visual.v3{background:#e9d9d1}.project-visual.v3 .mock-content b{background:#e65f35}.project-visual.v4{background:#e4e0ed}.project-visual.v4 .mock-content b{background:#8b80ae}.project-foot{display:flex;align-items:center;justify-content:space-between;gap:15px;margin-top:25px}.project-link{font:11px var(--mono);border-bottom:1px solid var(--orange);padding-bottom:4px}.project-type{font:10px var(--mono);color:var(--muted);text-transform:uppercase}
+    /* recognition */.recognition-grid{display:grid;grid-template-columns:1fr 1fr;gap:70px}.recognition-col h3{font:700 24px var(--display);letter-spacing:-.04em;margin:0 0 20px}.recognition-item{display:grid;grid-template-columns:62px 1fr;gap:16px;padding:19px 0;border-top:1px solid var(--line)}.recognition-mark{width:52px;height:52px;border-radius:13px;background:var(--paper-2);display:grid;place-items:center;font-size:21px}.recognition-item h4{margin:0;font:700 15px var(--display)}.recognition-item p{margin:4px 0 0;color:var(--muted);font-size:12px}.recognition-item small{font:10px var(--mono);color:var(--green)}.lazy-card{content-visibility:auto;contain-intrinsic-size:90px}
+    /* contact */.contact-section{background:var(--green);color:#f8f4e9;overflow:hidden}.contact-section .eyebrow{color:#d9c58d}.contact-section h2{font:800 clamp(45px,8vw,95px)/.98 var(--display);letter-spacing:-.075em;max-width:850px;margin:18px 0 25px}.contact-section p{color:#d6dfd2;max-width:480px}.contact-row{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-top:55px}.contact-section .btn{background:var(--paper);color:var(--ink);border-color:var(--paper)}.contact-section .btn:hover{background:var(--yellow);border-color:var(--yellow)}.contact-links{display:flex;gap:20px;flex-wrap:wrap;font:11px var(--mono);color:#e1e8dd}.contact-links a{border-bottom:1px solid #a6b8a4;padding-bottom:4px}
+    footer{padding:22px 0;background:#304a36;color:#d8e0d4;font:10px var(--mono)}.footer-inner{display:flex;justify-content:space-between;gap:15px}
+    /* motion */.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.7,.2,1)}.reveal.visible{opacity:1;transform:translateY(0)}.text-reveal{clip-path:inset(0 0 100% 0);transform:translateY(16px);transition:clip-path .85s cubic-bezier(.2,.7,.2,1),transform .85s}.text-reveal.visible{clip-path:inset(0 0 0 0);transform:translateY(0)}.to-top{position:fixed;right:25px;bottom:25px;z-index:30;width:48px;height:48px;border:0;border-radius:50%;background:var(--orange);color:white;font-size:21px;box-shadow:0 8px 24px #a74b2c40;cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:.25s}.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}.to-top:hover{background:var(--ink);transform:translateY(-4px)}
+    @media(max-width:850px){.nav-links{gap:14px}.nav-links a:not(.nav-cta){display:none}.hero-grid{grid-template-columns:1fr .8fr;gap:20px}.hero-art{height:400px}.art-frame{height:365px}.art-person{transform:translateX(-50%) scale(.8);transform-origin:bottom}.art-sun{width:170px;height:170px}.about-grid{gap:40px}.skill-grid{grid-template-columns:repeat(3,1fr)}.project-card{grid-template-columns:1fr .8fr;padding:27px;min-height:340px}.recognition-grid{gap:35px}}
+    @media(max-width:620px){.wrap{width:min(100% - 34px,var(--max))}.section{padding:78px 0}.nav{height:66px}.nav-links{display:none}.menu-btn{display:block}.nav-links.open{display:flex;position:absolute;top:65px;left:0;right:0;background:var(--paper);padding:18px 24px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch}.nav-links.open a{display:block;padding:7px}.hero{padding:115px 0 45px;min-height:auto}.hero-grid{grid-template-columns:1fr}.hero h1{font-size:clamp(54px,16vw,82px)}.hero-copy{font-size:15px}.hero-art{height:360px;margin-top:12px}.art-frame{width:270px;height:330px}.art-label{right:8px;bottom:24px}.art-stamp{left:10px;top:28px}.hero-note{margin-top:30px}.section-head{display:block;margin-bottom:32px}.section-head p{margin-top:15px}.about-grid{grid-template-columns:1fr;gap:25px}.big-number{font-size:125px}.about-facts{gap:8px}.fact strong{font-size:20px}.skill-grid{grid-template-columns:repeat(2,1fr);gap:9px}.skill-card{min-height:115px;padding:15px}.experience-item{grid-template-columns:1fr;gap:8px;padding:0 0 42px 35px}.experience-date{padding:0}.experience-content h3{font-size:21px}.project-card{position:relative!important;top:auto!important;grid-template-columns:1fr;padding:22px;margin-bottom:15px;min-height:auto}.project-visual{min-height:190px;grid-row:1}.project-card h3{margin-top:12px}.project-stack{padding-bottom:0}.recognition-grid{grid-template-columns:1fr;gap:35px}.contact-row{align-items:start;flex-direction:column}.footer-inner{flex-direction:column}.to-top{right:16px;bottom:16px}}
+    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal,.text-reveal{opacity:1;transform:none;clip-path:none}}
+
+    /* requested refinements: dual hero zoom, horizontal journey, scroll scale tiles, stacked card retreat */
+    .hero-copy-wrap{transform-origin:center left;will-change:transform}
+    .hero-art{transform-origin:center;will-change:transform}
+    .ticker-marquee{display:block;padding:0 24px;white-space:nowrap;color:#686961;font:11px var(--mono);letter-spacing:.13em;text-transform:uppercase}
+    .ticker-marquee b{color:var(--orange);font-size:17px;margin:0 13px}
+    .about-facts{grid-template-columns:repeat(4,minmax(0,1fr))}
+
+    /* horizontal experience timeline with scroll-triggered text fill */
+    .experience-rail{position:relative;overflow-x:auto;overflow-y:hidden;padding:42px 3px 22px;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-x:contain;scrollbar-width:thin;scrollbar-color:var(--orange) var(--paper-2)}
+    .experience-rail::-webkit-scrollbar{height:8px}.experience-rail::-webkit-scrollbar-track{background:var(--paper-2);border-radius:20px}.experience-rail::-webkit-scrollbar-thumb{background:var(--orange);border-radius:20px}
+    .experience-track{width:max-content;min-width:100%;display:flex;gap:20px;position:relative;padding:0 4px 8px}
+    .experience-track::before{content:'';position:absolute;left:24px;right:24px;top:8px;height:2px;background:linear-gradient(90deg,var(--orange),var(--green));border-radius:3px}
+    .experience-card{position:relative;flex:0 0 min(440px,78vw);min-height:300px;margin-top:28px;padding:25px 25px 23px;background:var(--white);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow);scroll-snap-align:start}
+    .experience-card::before{content:'';position:absolute;top:-29px;left:24px;width:17px;height:17px;border-radius:50%;background:var(--paper);border:4px solid var(--orange);box-shadow:0 0 0 5px rgba(230,95,53,.10)}
+    .experience-date{font:600 11px var(--mono);letter-spacing:.08em;color:var(--green);margin-bottom:17px}
+    .experience-content h3{font:800 clamp(22px,2.5vw,28px)/1.12 var(--display);letter-spacing:-.045em;margin:0}
+    .experience-content h4{font:500 11px var(--mono);letter-spacing:.025em;color:var(--muted);margin:8px 0 17px}
+    .experience-content p{margin:0;color:transparent;background:linear-gradient(90deg,var(--ink) 50%,#d8cfbd 50%);background-size:200% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;transition:background-position 1.05s cubic-bezier(.2,.7,.2,1)}
+    .experience-card.visible .experience-content p{background-position:0 0}
+    .journey-reveal{clip-path:inset(0 0 100% 0);transform:translateY(13px);transition:clip-path .8s cubic-bezier(.2,.7,.2,1),transform .8s}
+    .experience-card.visible .journey-reveal{clip-path:inset(0 0 0 0);transform:translateY(0)}
+    .experience-card:nth-child(2) .journey-reveal{transition-delay:.07s}.experience-card:nth-child(3) .journey-reveal{transition-delay:.12s}
+
+    /* scroll-timeline scale IN / OUT: labels remain from the original portfolio */
+    .skill-card{border:2px solid var(--ink);border-radius:14px;background:rgba(255,253,248,.72);transform-origin:center;animation:skill-scale-in-out linear both;animation-timeline:view();animation-range:entry 0% exit 100%}
+    .skill-card:nth-child(3n+1){border-color:var(--orange)}.skill-card:nth-child(3n+2){border-color:#3b3a8f}.skill-card:nth-child(3n){border-color:var(--green)}
+    @keyframes skill-scale-in-out{0%{transform:scale(.5);opacity:0}35%,65%{transform:scale(1);opacity:1}100%{transform:scale(.5);opacity:0}}
+    @supports not (animation-timeline:view()){
+      .skill-card{animation:none;transform:scale(.5);opacity:.25;transition:transform .45s ease,opacity .45s ease}
+      .skill-card.in-view{transform:scale(1);opacity:1}
+    }
+
+    /* Each new project card covers the former card; JS subtly pushes the previous one back. */
+    .project-card{transform-origin:top center;will-change:transform,opacity}
+    .project-card:nth-child(1){z-index:1}.project-card:nth-child(2){z-index:2}.project-card:nth-child(3){z-index:3}.project-card:nth-child(4){z-index:4}
+
+    /* Contact content from the reference, recoloured to match the original portfolio. */
+    .contact-section{text-align:center}
+    .contact-wrap{display:flex;flex-direction:column;align-items:center}
+    .contact-section h2{font:800 clamp(45px,8vw,88px)/.98 var(--display);letter-spacing:-.075em;max-width:850px;margin:18px 0 20px}
+    .contact-section .contact-intro{max-width:520px;margin:0 auto 23px;color:#d6dfd2}
+    .contact-email{font:700 clamp(20px,3.5vw,32px) var(--display);color:#fffdf8;border-bottom:1px solid rgba(255,253,248,.45);padding-bottom:5px}
+    .contact-meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin:18px 0 28px!important;color:#d6dfd2!important;font:11px var(--mono)}
+    .contact-meta span+span::before{content:'·';margin-right:16px;color:#d9c58d}
+    .contact-section .contact-button{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+    .contact-section .contact-button:hover{background:var(--yellow);border-color:var(--yellow)}
+
+    /* Expanded footer: internal section navigation and useful contact routes. */
+    .site-footer{padding:48px 0 22px;background:#304a36;color:#d8e0d4;font:11px var(--mono)}
+    .footer-main{display:grid;grid-template-columns:1.1fr .9fr 1fr;gap:45px;padding-bottom:38px}
+    .footer-brand .brand{display:inline-block;color:#f8f4e9;font:800 25px var(--display)}
+    .footer-brand p{max-width:270px;color:#c5d1c2;line-height:1.8;margin:12px 0 0}
+    .footer-column h3{font:700 12px var(--display);color:#f8f4e9;letter-spacing:.08em;text-transform:uppercase;margin:4px 0 15px}
+    .footer-links{display:grid;gap:9px;color:#c5d1c2}
+    .footer-links a{width:max-content;max-width:100%;transition:color .2s}
+    .footer-links a:hover{color:#f4c27b}
+    .footer-bottom{display:flex;justify-content:space-between;gap:15px;padding-top:20px;border-top:1px solid rgba(216,224,212,.2);color:#aebdac}
+    @media(max-width:850px){.about-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.footer-main{grid-template-columns:1fr 1fr;gap:34px}.footer-brand{grid-column:1/-1}}
+    @media(max-width:620px){
+      .hero-copy-wrap{transform-origin:top left}
+      .about-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .experience-rail{margin-right:-17px;padding-right:17px}
+      .experience-card{flex-basis:calc(100vw - 58px);min-height:320px;padding:22px}
+      .experience-track{gap:14px}
+      .project-card{transform:none!important;opacity:1!important}
+      .contact-section h2{font-size:clamp(44px,13vw,68px)}
+      .contact-meta{flex-direction:column;gap:5px}.contact-meta span+span::before{content:'';margin:0}
+      .footer-main{grid-template-columns:1fr;gap:28px}.footer-brand{grid-column:auto}
+      .footer-bottom{flex-direction:column;gap:8px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      .experience-content p{color:var(--ink);background:none;transition:none}
+      .journey-reveal{clip-path:none;transform:none}
+      .skill-card{animation:none;transform:none;opacity:1}
+    }
+
+
+    /* Refined cool-light palette and boxed About KPIs */
+    body{background:var(--paper);color:var(--ink)}
+    .nav{background:rgba(245,247,252,.88);border-bottom-color:rgba(217,225,238,.85)}
+    .hero:before{color:rgba(55,139,131,.065)}
+    .art-frame{background:#e5eaf3}.art-hill{background:var(--green)}.art-hill:after{background:#79aaa2}
+    .art-sun{background:var(--yellow)}.person-body:after{background:var(--orange)}
+    .ticker{background:#edf1f8;border-color:var(--line)}
+    .skills-section{background:#edf2f9}
+    .projects-section{background:#e9eef7}
+    .about-facts{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .fact{border:1px solid var(--line);border-radius:15px;padding:17px 15px;background:rgba(255,255,255,.82);box-shadow:0 8px 22px rgba(34,49,78,.045);transition:transform .25s,border-color .25s,box-shadow .25s}
+    .fact:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:0 14px 28px rgba(34,49,78,.09)}
+    .fact strong{color:var(--orange);font-size:clamp(22px,2.5vw,29px)}
+    .fact span{display:block;line-height:1.5;margin-top:5px;color:var(--muted)}
+    .hero-actions .btn.secondary:hover{background:var(--green);border-color:var(--green);color:#fff}
+    .hero-actions .btn.secondary:hover span{transform:translate(3px,-2px)}
+    .hero-actions .btn span{display:inline-block;transition:transform .2s}
+    .contact-section{background:#294563;color:#f7f9fd}
+    .contact-section .eyebrow{color:#f0cf8a}
+    .contact-section p{color:#d7e3ef}
+    .contact-section .contact-intro,.contact-section .contact-meta{color:#d7e3ef!important}
+    .contact-section .contact-email{color:#fff;border-color:rgba(255,255,255,.42)}
+    .contact-section .contact-button{background:#f5f7fc;color:#202d49;border-color:#f5f7fc}
+    .contact-section .contact-button:hover{background:var(--yellow);border-color:var(--yellow);color:#202d49}
+    .site-footer{background:#1d344f;color:#dce6f1}
+    .footer-column h3{color:#f0cf8a}
+    .footer-links a:hover{color:#f0cf8a}
+    .project-card{box-shadow:0 14px 38px rgba(34,49,78,.10)}
+
+    /* Vertical page scrolling drives a pinned, horizontal experience journey. */
+    .journey-section{position:relative;height:var(--journey-section-height,220vh);padding:0;background:#eaf0f8;isolation:isolate}
+    .journey-pin{position:sticky;top:76px;height:calc(100svh - 76px);min-height:560px;overflow:hidden;display:flex;align-items:center;background:linear-gradient(145deg,#eef3fa 0%,#e5edf7 55%,#edf2f9 100%);border-block:1px solid rgba(217,225,238,.9)}
+    .journey-inner{width:min(var(--max),calc(100% - 48px));margin:auto;padding:34px 0 25px}
+    .journey-heading{align-items:end;margin-bottom:30px}
+    .journey-heading h2{font-size:clamp(32px,4.3vw,52px)}
+    .journey-heading p{font-size:12px;max-width:290px}
+    .journey-window{position:relative;overflow:hidden;padding:0 0 10px;min-height:300px}
+    .journey-line{position:absolute;left:0;right:0;top:17px;height:3px;border-radius:5px;background:#cbd6e5;z-index:0;overflow:hidden;opacity:0;transition:opacity .45s ease}.journey-section.journey-started .journey-line{opacity:1}
+    .journey-line-progress{display:block;width:100%;height:100%;background:linear-gradient(90deg,var(--orange),var(--green));transform:scaleX(0);transform-origin:left center;will-change:transform}
+    .experience-track{width:max-content;min-width:100%;display:flex;gap:18px;position:relative;padding:0 4px 8px;will-change:transform;transform:translate3d(0,0,0)}
+    .experience-card{position:relative;flex:0 0 clamp(275px,30vw,350px);min-height:246px;margin-top:40px;padding:20px 21px 18px;background:rgba(255,255,255,.94);border:1px solid #d5deeb;border-radius:16px;box-shadow:0 12px 30px rgba(34,49,78,.09);opacity:0;visibility:hidden;transform:translateY(22px) scale(.97);transition:opacity .5s ease,transform .55s cubic-bezier(.2,.7,.2,1),visibility .5s;scroll-snap-align:start}
+    .experience-card::before{content:'';position:absolute;top:-31px;left:23px;width:16px;height:16px;border-radius:50%;background:#fff;border:4px solid var(--orange);box-shadow:0 0 0 5px rgba(229,107,99,.12);opacity:0;transform:scale(.5);transition:opacity .35s,transform .35s}
+    .experience-card.is-revealed{opacity:1;visibility:visible;transform:translateY(0) scale(1)}
+    .experience-card.is-revealed::before{opacity:1;transform:scale(1)}
+    .experience-date{font:600 10px var(--mono);letter-spacing:.09em;color:var(--green);margin-bottom:12px}
+    .experience-content h3{font:800 clamp(19px,2vw,23px)/1.16 var(--display);letter-spacing:-.045em;margin:0}
+    .experience-content h4{font:500 10px/1.5 var(--mono);color:var(--muted);margin:7px 0 12px}
+    .experience-content p{font-size:12px;line-height:1.65;margin:0;color:transparent;background:linear-gradient(90deg,var(--ink) 50%,#c4ccda 50%);background-size:200% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;transition:background-position .9s cubic-bezier(.2,.7,.2,1)}
+    .experience-card.is-revealed .experience-content p{background-position:0 0}
+    .experience-card .tag-row{gap:5px;margin-top:12px}
+    .experience-card .tag{padding:4px 8px;font-size:9px;background:#f4f7fb}
+    .journey-reveal{opacity:0;clip-path:inset(0 0 100% 0);transform:translateY(9px);transition:opacity .45s,clip-path .65s cubic-bezier(.2,.7,.2,1),transform .65s}
+    .experience-card.is-revealed .journey-reveal{opacity:1;clip-path:inset(0 0 0 0);transform:translateY(0)}
+    .experience-card .journey-reveal:nth-child(2){transition-delay:.08s}
+    .journey-hint{display:flex;align-items:center;gap:12px;margin-top:15px;color:#78859b;font:9px var(--mono);letter-spacing:.12em}
+    .journey-hint-arrow{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;background:#fff;color:var(--orange);font-size:15px;box-shadow:0 3px 12px rgba(34,49,78,.08)}
+    @media(max-width:850px){.about-facts{grid-template-columns:repeat(2,minmax(0,1fr))}.journey-inner{width:min(var(--max),calc(100% - 40px))}.experience-card{flex-basis:clamp(270px,48vw,340px)}}
+    @media(max-width:620px){
+      .about-facts{grid-template-columns:repeat(2,minmax(0,1fr))}
+      .fact{padding:14px 12px}
+      .journey-section{height:var(--journey-section-height,250vh)}
+      .journey-pin{top:66px;height:calc(100svh - 66px);min-height:590px;align-items:center}
+      .journey-inner{width:calc(100% - 34px);padding:22px 0 18px}
+      .journey-heading{margin-bottom:16px}
+      .journey-heading p{font-size:11px;margin-top:10px}
+      .journey-window{min-height:310px}
+      .experience-card{flex-basis:calc(100vw - 72px);min-height:260px;padding:18px}
+      .journey-hint{font-size:8px;gap:8px;flex-wrap:wrap}
+      .hero-actions .btn.secondary:hover{background:var(--green);color:#fff}
+    }
+    @media(prefers-reduced-motion:reduce){.experience-card,.experience-card::before,.journey-reveal,.experience-content p,.journey-line-progress{transition:none!important}.experience-card{opacity:1;visibility:visible;transform:none}.journey-reveal{opacity:1;clip-path:none;transform:none}.experience-content p{color:var(--ink);background:none}}
+
+
+    /* Requested lavender light theme + midnight velvet dark theme */
+    body{background:var(--paper);color:var(--ink);transition:background .3s ease,color .3s ease}
+    .nav{background:color-mix(in srgb,var(--paper) 88%,transparent);border-bottom-color:var(--line)}
+    .nav-links{color:var(--muted)}
+    .nav-cta{border-color:var(--green);color:var(--green)!important}
+    .theme-toggle{display:inline-flex;align-items:center;gap:7px;padding:8px 12px;border:1px solid var(--line);border-radius:30px;background:var(--white);color:var(--ink);cursor:pointer;font:600 11px var(--mono);transition:background .2s,border-color .2s,transform .2s}
+    .theme-toggle:hover{border-color:var(--green);transform:translateY(-2px)}
+    .theme-icon{font-size:16px;line-height:1;color:var(--orange)}
+    .hero:before{color:color-mix(in srgb,var(--green) 8%,transparent)}
+    .hero-copy,.about-copy p,.experience-content p{color:var(--muted)}
+    .ticker{background:var(--paper-2);border-color:var(--line)}
+    .ticker-track{color:var(--muted)}
+    .skills-section{background:var(--paper-2)}
+    .skill-card{background:var(--white);border-color:var(--line)}
+    .skill-card:hover{border-color:var(--green);background:var(--paper-2)}
+    .fact{border:1px solid var(--line);border-radius:14px;padding:17px;background:var(--white);box-shadow:0 8px 22px rgba(47,27,75,.04);transition:transform .25s,border-color .25s,box-shadow .25s}
+    .fact:hover{transform:translateY(-4px);border-color:var(--green);box-shadow:var(--shadow)}
+    .fact span{color:var(--muted)}
+    .journey-section{background:var(--paper-2)}
+    .journey-pin{background:var(--paper-2);border-color:var(--line)}
+    .journey-line{background:var(--line)}
+    .journey-line-progress{background:linear-gradient(90deg,var(--orange),var(--green))}
+    .experience-track{gap:22px}
+    /* Two cards fit across a desktop viewport; one card is shown on phones. */
+    .experience-card{flex-basis:clamp(420px,43vw,540px);min-height:285px;padding:25px 27px 23px;background:var(--white);border-color:var(--line);box-shadow:var(--shadow)}
+    .experience-card::before{background:var(--white);border-color:var(--orange);box-shadow:0 0 0 5px color-mix(in srgb,var(--orange) 16%,transparent)}
+    .experience-content p{color:transparent;background:linear-gradient(90deg,var(--ink) 50%,color-mix(in srgb,var(--muted) 24%,var(--white)) 50%);background-size:200% 100%;background-position:100% 0}
+    .experience-card .tag{background:var(--paper-2);border-color:var(--line);color:var(--muted)}
+    .journey-hint{color:var(--muted)}
+    .journey-hint-arrow{background:var(--white);color:var(--orange)}
+    .projects-section{background:var(--paper-2)}
+    .project-card{background:var(--white);border-color:var(--line);box-shadow:var(--shadow)}
+    .project-visual{background:var(--paper-2)}
+    .project-visual .mock-window{background:var(--white)}
+    .tag{border-color:var(--line);color:var(--muted)}
+    .contact-section{background:var(--paper-2)}
+    .contact-section .contact-button{background:var(--green);border-color:var(--green);color:#fff}
+    .contact-section .contact-button:hover{background:var(--orange);border-color:var(--orange);color:#fff}
+    .site-footer{background:#171224;color:#F5F3FF}
+    .footer-column h3{color:#A78BFA}.footer-links a:hover{color:#FB7185}
+    .to-top{background:var(--green);color:#fff}
+    html[data-theme="dark"] .nav{background:rgba(13,10,20,.9)}
+    html[data-theme="dark"] .hero-copy,html[data-theme="dark"] .about-copy p,html[data-theme="dark"] .section-head p{color:var(--muted)}
+    html[data-theme="dark"] .art-frame{background:#2A213D;border-color:#171224}
+    html[data-theme="dark"] .art-label{background:#171224;color:var(--ink)}
+    html[data-theme="dark"] .art-stamp{background:#0D0A14}
+    html[data-theme="dark"] .project-visual .mock-window{background:#211a30}
+    html[data-theme="dark"] .project-visual .mock-top{background:#2A213D}
+    html[data-theme="dark"] .recognition-card,html[data-theme="dark"] .contact-card{background:var(--white);border-color:var(--line)}
+    @media(max-width:850px){.experience-card{flex-basis:clamp(390px,68vw,500px)}}
+    @media(max-width:620px){
+      .nav-inner{position:relative;gap:10px}.nav-links.open{background:var(--paper);border-color:var(--line)}
+      .theme-toggle{align-self:center;flex-shrink:0;padding:7px 9px}.theme-label{display:none}
+      .experience-card{flex-basis:calc(100vw - 54px);min-height:270px;padding:20px}
+      .experience-track{gap:15px}
+    }
+
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#home">aarav<span>.</span></a>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a><a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Journey</a><a href="#projects">Projects</a><a href="#recognition">Achievements</a><a class="nav-cta" href="#contact">Let's talk ↗</a>
+      </div>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch to dark mode" title="Switch theme"><span class="theme-icon" aria-hidden="true">☾</span><span class="theme-label">Dark</span></button>
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation">☰</button>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div class="hero-copy-wrap" id="heroText">
+          <div class="hero-kicker eyebrow"><span class="dot"></span> Available for meaningful opportunities</div>
+          <h1>Building digital<br><span class="line2">things that</span><span class="serif"> matter.</span></h1>
+          <p class="hero-copy">Namaste! I'm Aarav — a full-stack developer who enjoys turning thoughtful ideas into useful, human-friendly digital experiences.</p>
+          <div class="hero-actions"><a class="btn" href="#projects">Explore my work <span>↗</span></a><a class="btn secondary" href="#contact">Get in touch <span>↗</span></a></div>
+          <div class="hero-note">Based in Ahmedabad, India · Open to collaboration</div>
+        </div>
+        <div class="hero-art" id="heroArt" aria-label="Abstract illustrated portrait">
+          <div class="art-frame"><div class="art-sun"></div><div class="art-hill"></div><div class="art-person"><div class="person-head"></div><div class="person-hair"></div><div class="person-body"></div></div></div>
+          <div class="art-stamp">CRAFTED<br>WITH ♥<br>IN INDIA</div>
+          <div class="art-label">CURRENTLY BUILDING<strong>Ideas → Impact</strong></div>
+        </div>
+      </div>
+    </section>
+    <div class="ticker" aria-label="Portfolio values">
+      <marquee class="ticker-marquee" behavior="scroll" direction="left" scrollamount="5" onmouseover="this.stop()" onmouseout="this.start()">
+        Curiosity <b>✳</b> Code with care <b>✳</b> Learn every day <b>✳</b> Make it useful <b>✳</b> Made in India <b>✳</b> Curiosity <b>✳</b> Code with care <b>✳</b> Learn every day <b>✳</b> Make it useful <b>✳</b> Made in India <b>✳</b>
+      </marquee>
+    </div>
+
+    <section class="section" id="about"><div class="wrap about-grid">
+      <div class="about-aside reveal"><div class="eyebrow">A little introduction</div><div class="big-number">01<small>THE PERSON BEHIND THE PIXELS</small></div></div>
+      <div class="about-copy reveal"><h3>Good technology should feel <span class="serif accent">simple</span>, even when the thinking behind it isn't.</h3><p>I'm a curious developer from Gujarat, India, interested in building across the web — from clean interfaces and responsive frontends to APIs, databases and the logic that connects everything.</p><p>I value clear communication, steady learning and practical problem-solving. Outside the code editor, you'll find me exploring design details, learning new tools or enjoying a strong cup of chai.</p>
+        <div class="about-facts"><div class="fact"><strong>03+</strong><span>Years learning</span></div><div class="fact"><strong>08</strong><span>Projects explored</span></div><div class="fact"><strong>04+</strong><span>Clients & collaborations</span></div><div class="fact"><strong>03</strong><span>Hindi · Gujarati · English</span></div></div>
+      </div>
+    </div></section>
+
+    <section class="section skills-section" id="skills"><div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Tools of the trade · 02</div><h2>My <span class="serif accent">toolkit.</span></h2></div><p class="skills-intro">A growing set of technologies I use to shape ideas into reliable, accessible and delightful products.</p></div>
+      <div class="skill-grid">
+        <div class="skill-card"><span class="skill-icon">⌘</span><strong>HTML & CSS</strong><small>Structure · Styling</small></div>
+        <div class="skill-card"><span class="skill-icon">⚡</span><strong>JavaScript</strong><small>Interaction · Logic</small></div>
+        <div class="skill-card"><span class="skill-icon">⚛</span><strong>React</strong><small>Component UI</small></div>
+        <div class="skill-card"><span class="skill-icon">⬡</span><strong>Node.js</strong><small>Backend runtime</small></div>
+        <div class="skill-card"><span class="skill-icon">◈</span><strong>Express</strong><small>REST APIs</small></div>
+        <div class="skill-card"><span class="skill-icon">🍃</span><strong>MongoDB</strong><small>Document database</small></div>
+        <div class="skill-card"><span class="skill-icon">▤</span><strong>MySQL</strong><small>Relational data</small></div>
+        <div class="skill-card"><span class="skill-icon">🐍</span><strong>Python</strong><small>Automation · Basics</small></div>
+        <div class="skill-card"><span class="skill-icon">◉</span><strong>Git & GitHub</strong><small>Version control</small></div>
+        <div class="skill-card"><span class="skill-icon">✳</span><strong>Figma</strong><small>UI exploration</small></div>
+        <div class="skill-card"><span class="skill-icon">▧</span><strong>Tailwind CSS</strong><small>Utility styling</small></div>
+        <div class="skill-card"><span class="skill-icon">◎</span><strong>REST APIs</strong><small>Integration</small></div>
+      </div>
+    </div></section>
+
+    <section class="journey-section" id="experience" aria-label="My experience journey">
+      <div class="journey-pin">
+        <div class="wrap journey-inner">
+          <div class="section-head journey-heading">
+            <div><div class="eyebrow">Experience · અનુભવ · 03</div><h2>My journey <span class="serif accent">so far.</span></h2></div>
+            <p>Keep scrolling vertically. The timeline moves horizontally and reveals each chapter as it arrives.</p>
+          </div>
+          <div class="journey-window" aria-label="A horizontally moving experience timeline controlled by vertical page scrolling">
+            <div class="journey-line"><span class="journey-line-progress"></span></div>
+            <div class="experience-track">
+              <article class="experience-card">
+                <div class="experience-date journey-reveal">2023 – PRESENT</div>
+                <div class="experience-content">
+                  <h3 class="journey-reveal">Senior Frontend Engineer</h3>
+                  <h4 class="journey-reveal">Bharat Pay Labs · Bengaluru</h4>
+                  <p class="journey-copy">Led the redesign of a UPI payments dashboard, cut page load by 45% and shipped Hindi, Gujarati and Marathi support for 1.2 lakh merchants.</p>
+                  <div class="tag-row"><span class="tag">React</span><span class="tag">Performance</span><span class="tag">Localization</span></div>
+                </div>
+              </article>
+              <article class="experience-card">
+                <div class="experience-date journey-reveal">2021 – 2023</div>
+                <div class="experience-content">
+                  <h3 class="journey-reveal">Full Stack Developer</h3>
+                  <h4 class="journey-reveal">Saathi EdTech · Pune</h4>
+                  <p class="journey-copy">Built a vernacular learning platform with live classes, offline mode and voice quizzes that reached students in over 400 towns across India.</p>
+                  <div class="tag-row"><span class="tag">Full Stack</span><span class="tag">EdTech</span><span class="tag">Offline-first</span></div>
+                </div>
+              </article>
+              <article class="experience-card">
+                <div class="experience-date journey-reveal">2019 – 2021</div>
+                <div class="experience-content">
+                  <h3 class="journey-reveal">Software Engineer</h3>
+                  <h4 class="journey-reveal">Navrang Softworks · Ahmedabad</h4>
+                  <p class="journey-copy">Developed e-commerce tools for textile traders of Surat, automated GST invoicing and reduced manual billing work by 60%.</p>
+                  <div class="tag-row"><span class="tag">E-commerce</span><span class="tag">GST Invoicing</span><span class="tag">Automation</span></div>
+                </div>
+              </article>
+              <article class="experience-card">
+                <div class="experience-date journey-reveal">2019</div>
+                <div class="experience-content">
+                  <h3 class="journey-reveal">Intern</h3>
+                  <h4 class="journey-reveal">Gujarat Technological University Labs</h4>
+                  <p class="journey-copy">Prototyped an IoT crop-monitoring dashboard for farmers as part of the final year project.</p>
+                  <div class="tag-row"><span class="tag">IoT</span><span class="tag">Dashboard</span><span class="tag">Agriculture</span></div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="journey-hint"><span>SCROLL TO EXPLORE</span><span class="journey-hint-arrow">↓</span><span>VERTICAL SCROLL · HORIZONTAL JOURNEY</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section projects-section" id="projects"><div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Selected work · 04</div><h2>Made with <span class="serif accent">intent.</span></h2></div><p>A few concepts and builds that show how I approach real-world problems. Scroll to see each project card stack into view.</p></div>
+      <div class="project-stack">
+        <article class="project-card"><div><div class="project-index">PROJECT / 01 — WEB PLATFORM</div><h3>SafarSetu<span class="accent">.</span></h3><p>A travel discovery concept bringing transport, stays, food and local experiences together in one simple journey planner.</p><div class="tag-row"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">MongoDB</span><span class="tag">Maps</span></div><div class="project-foot"><a class="project-link" href="#contact">View case study ↗</a><span class="project-type">Personal · Full stack</span></div></div><div class="project-visual"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-content"><b></b><b></b><b></b></div></div></div></article>
+        <article class="project-card"><div><div class="project-index">PROJECT / 02 — MOBILITY</div><h3>VH Taxi Go<span class="accent">.</span></h3><p>An EV rental and ride-booking prototype exploring passenger and driver workflows, trip updates and verification.</p><div class="tag-row"><span class="tag">MERN</span><span class="tag">JWT</span><span class="tag">Socket.IO</span><span class="tag">API</span></div><div class="project-foot"><a class="project-link" href="#contact">View case study ↗</a><span class="project-type">Personal · Team-ready</span></div></div><div class="project-visual v2"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-content"><b></b><b></b><b></b></div></div></div></article>
+        <article class="project-card"><div><div class="project-index">PROJECT / 03 — DATA</div><h3>Cricket Analytics<span class="accent">.</span></h3><p>A cricket data exploration dashboard concept for turning match information into useful insights for players and analysts.</p><div class="tag-row"><span class="tag">React</span><span class="tag">Django REST</span><span class="tag">MySQL</span><span class="tag">Python</span></div><div class="project-foot"><a class="project-link" href="#contact">View case study ↗</a><span class="project-type">Academic · Analytics</span></div></div><div class="project-visual v3"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-content"><b></b><b></b><b></b></div></div></div></article>
+        <article class="project-card"><div><div class="project-index">PROJECT / 04 — CREATIVE TOOL</div><h3>PixRevive<span class="accent">.</span></h3><p>A photo restoration application concept focused on helping people preserve and revisit meaningful memories.</p><div class="tag-row"><span class="tag">Python</span><span class="tag">AI / ML</span><span class="tag">MongoDB</span><span class="tag">React</span></div><div class="project-foot"><a class="project-link" href="#contact">View case study ↗</a><span class="project-type">Personal · AI</span></div></div><div class="project-visual v4"><div class="mock-window"><div class="mock-top"><i></i><i></i><i></i></div><div class="mock-content"><b></b><b></b><b></b></div></div></div></article>
+      </div>
+    </div></section>
+
+    <section class="section" id="recognition"><div class="wrap">
+      <div class="section-head"><div><div class="eyebrow">Milestones & learning · 05</div><h2>Proof of <span class="serif accent">progress.</span></h2></div><p>Achievements, certifications, workshops and learning milestones — add verified details and links as you earn them.</p></div>
+      <div class="recognition-grid">
+        <div class="recognition-col"><h3>Achievements</h3>
+          <article class="recognition-item lazy-card"><div class="recognition-mark">🏆</div><div><small>2025 · SAMPLE</small><h4>Inter-college Hackathon Finalist</h4><p>Collaborated with a team to prototype a solution under a time-bound challenge.</p></div></article>
+          <article class="recognition-item lazy-card"><div class="recognition-mark">💡</div><div><small>2024 · SAMPLE</small><h4>Project Showcase Recognition</h4><p>Presented an academic application project focused on practical usability.</p></div></article>
+          <article class="recognition-item lazy-card"><div class="recognition-mark">🌱</div><div><small>ONGOING</small><h4>Open-source & Community Learning</h4><p>Learning in public, sharing experiments and improving through feedback.</p></div></article>
+        </div>
+        <div class="recognition-col"><h3>Certifications</h3>
+          <article class="recognition-item lazy-card"><div class="recognition-mark">📜</div><div><small>2025 · SAMPLE</small><h4>Full-Stack Web Development</h4><p>Provider Name · Credential ID / verification link</p></div></article>
+          <article class="recognition-item lazy-card"><div class="recognition-mark">🔐</div><div><small>2024 · SAMPLE</small><h4>Introduction to Cybersecurity</h4><p>Provider Name · Credential ID / verification link</p></div></article>
+          <article class="recognition-item lazy-card"><div class="recognition-mark">📊</div><div><small>2024 · SAMPLE</small><h4>Data Analytics Foundations</h4><p>Provider Name · Credential ID / verification link</p></div></article>
+        </div>
+      </div>
+    </div></section>
+
+    <section class="section contact-section" id="contact"><div class="wrap contact-wrap">
+      <div class="eyebrow">Contact · संपर्क · 06</div>
+      <h2>Chalo, let's <span class="serif">talk!</span></h2>
+      <p class="contact-intro">Open to freelance, full-time and open-source collaboration.</p>
+      <a class="contact-email" href="mailto:aarav@example.com">aarav@example.com</a>
+      <p class="contact-meta"><span>Ahmedabad, Gujarat</span><span>+91 98765 43210</span></p>
+      <a class="btn contact-button" href="mailto:aarav@example.com">Send a message <span>↗</span></a>
+    </div></section>
+  </main>
+  <footer class="site-footer">
+    <div class="wrap footer-main">
+      <div class="footer-brand"><a class="brand" href="#home">aarav<span>.</span></a><p>Building useful digital experiences with a little desi soul. <span class="hi">धन्यवाद</span></p></div>
+      <div class="footer-column"><h3>Explore</h3><div class="footer-links"><a href="#home">Home</a><a href="#about">About</a><a href="#skills">Tech stack & skills</a><a href="#experience">My journey</a><a href="#projects">Projects</a><a href="#recognition">Achievements & certifications</a><a href="#contact">Contact</a></div></div>
+      <div class="footer-column"><h3>Get in touch</h3><div class="footer-links"><a href="mailto:aarav@example.com">aarav@example.com</a><a href="tel:+919876543210">+91 98765 43210</a><span>Ahmedabad, Gujarat, India</span><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a></div></div>
+    </div>
+    <div class="wrap footer-bottom"><span>© 2026 Aarav Shah · Made with care in India 🇮🇳</span><span>DESIGNED TO KEEP LEARNING.</span></div>
+  </footer>
+  <button class="to-top" id="toTop" aria-label="Scroll to top" title="Back to top">↑</button>
+  <script>
+    // Persistent light/dark theme toggle.
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle?.querySelector('.theme-icon');
+    const themeLabel = themeToggle?.querySelector('.theme-label');
+    const savedTheme = (() => { try { return localStorage.getItem('portfolio-theme'); } catch (_) { return null; } })();
+    function applyTheme(theme) {
+      const dark = theme === 'dark';
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      if (themeIcon) themeIcon.textContent = dark ? '☀' : '☾';
+      if (themeLabel) themeLabel.textContent = dark ? 'Light' : 'Dark';
+      if (themeToggle) themeToggle.setAttribute('aria-label', dark ? 'Switch to light mode' : 'Switch to dark mode');
+      document.querySelector('meta[name="theme-color"]')?.setAttribute('content', dark ? '#0D0A14' : '#FDFCFE');
+      try { localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light'); } catch (_) {}
+    }
+    applyTheme(savedTheme === 'dark' ? 'dark' : 'light');
+    themeToggle?.addEventListener('click', () => applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
+
+    // Scroll reveals, horizontal journey text reveal, and skill fallback for browsers without view timelines.
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.14, rootMargin: '0px 0px -35px 0px' });
+
+    document.querySelectorAll('.reveal, .text-reveal, .experience-card').forEach(el => observer.observe(el));
+    if (!CSS.supports('animation-timeline: view()')) {
+      document.querySelectorAll('.skill-card').forEach(el => observer.observe(el));
+    }
+
+    // Scroll-based zoom applies equally to the hero text and illustration.
+    const heroArt = document.getElementById('heroArt');
+    const heroText = document.getElementById('heroText');
+    let ticking = false;
+    function clamp(value, min, max) { return Math.min(Math.max(value, min), max); }
+    function updateHeroZoom() {
+      const progress = clamp(window.scrollY / Math.max(window.innerHeight * 0.85, 1), 0, 1);
+      const scale = 1 - progress * 0.17;
+      if (heroArt) heroArt.style.transform = `scale(${scale})`;
+      if (heroText) heroText.style.transform = `scale(${scale})`;
+      ticking = false;
+    }
+
+    // Retreat the card underneath as the next sticky project card approaches and stacks over it.
+    const projectCards = Array.from(document.querySelectorAll('.project-card'));
+    function updateProjectStack() {
+      if (window.innerWidth <= 620) {
+        projectCards.forEach(card => { card.style.transform = ''; card.style.opacity = ''; });
+        return;
+      }
+      projectCards.forEach((card, index) => {
+        if (index === projectCards.length - 1) return;
+        const nextCard = projectCards[index + 1];
+        const nextTop = nextCard.getBoundingClientRect().top;
+        const stickyTop = parseFloat(getComputedStyle(nextCard).top) || 105;
+        const start = Math.max(stickyTop + 1, window.innerHeight * 0.82);
+        const progress = clamp((start - nextTop) / Math.max(start - stickyTop, 1), 0, 1);
+        const scale = 1 - progress * 0.075;
+        const retreat = -progress * 18;
+        card.style.transform = `translate3d(0, ${retreat}px, 0) scale(${scale})`;
+        card.style.opacity = String(1 - progress * 0.16);
+      });
+    }
+
+    function updateOnScroll() {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        updateHeroZoom();
+        updateProjectStack();
+        ticking = false;
+      });
+    }
+    window.addEventListener('scroll', updateOnScroll, { passive: true });
+    window.addEventListener('resize', updateOnScroll, { passive: true });
+    updateHeroZoom();
+    updateProjectStack();
+
+    // Scroll-to-top control.
+    const toTop = document.getElementById('toTop');
+    window.addEventListener('scroll', () => toTop.classList.toggle('show', window.scrollY > 500), { passive: true });
+    toTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Compact mobile navigation.
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinks = document.getElementById('navLinks');
+    menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => navLinks.classList.remove('open')));
+
+    // Pin the experience scene and map ordinary vertical page scrolling to horizontal timeline travel.
+    const journeySection = document.getElementById('experience');
+    const journeyPin = journeySection?.querySelector('.journey-pin');
+    const journeyTrack = journeySection?.querySelector('.experience-track');
+    const journeyCards = journeyTrack ? Array.from(journeyTrack.querySelectorAll('.experience-card')) : [];
+    const journeyProgress = journeySection?.querySelector('.journey-line-progress');
+    let journeyFrame = 0;
+
+    function sizeJourney() {
+      if (!journeySection || !journeyPin || !journeyTrack) return;
+      const maxTravel = Math.max(0, journeyTrack.scrollWidth - journeyPin.querySelector('.journey-window').clientWidth);
+      const pinHeight = journeyPin.getBoundingClientRect().height;
+      // Reserve enough vertical scroll distance for the full horizontal track plus a short arrival/exit ease.
+      const travelDistance = maxTravel + Math.max(180, window.innerHeight * 0.22);
+      journeySection.style.setProperty('--journey-section-height', `${Math.ceil(pinHeight + travelDistance)}px`);
+      journeySection.dataset.travel = String(maxTravel);
+      journeySection.dataset.distance = String(travelDistance);
+      updateJourney();
+    }
+
+    function updateJourney() {
+      if (!journeySection || !journeyPin || !journeyTrack) return;
+      const maxTravel = Number(journeySection.dataset.travel || 0);
+      const distance = Number(journeySection.dataset.distance || 1);
+      const sectionTop = journeySection.getBoundingClientRect().top + window.scrollY;
+      const progress = clamp((window.scrollY - sectionTop) / distance, 0, 1);
+      const travelProgress = maxTravel ? clamp(progress * (distance / Math.max(maxTravel, 1)), 0, 1) : 1;
+      journeyTrack.style.transform = `translate3d(${-maxTravel * travelProgress}px,0,0)`;
+      if (journeyProgress) journeyProgress.style.transform = `scaleX(${travelProgress})`;
+      journeySection.classList.toggle('journey-started', progress > 0.02);
+
+      const viewportWidth = journeySection.querySelector('.journey-window').clientWidth;
+      const currentTravel = maxTravel * travelProgress;
+      const revealCandidates = journeyCards.map((card, index) => ({
+        card, index,
+        left: card.offsetLeft - currentTravel,
+        right: card.offsetLeft - currentTravel + card.offsetWidth
+      }));
+      const visibleCandidates = revealCandidates.filter(item => item.right > 0 && item.left < viewportWidth);
+      // Reveal only cards entering the viewport; cards naturally leave behind the clipped window.
+      // The generous width of each card limits desktop to two cards and mobile to one.
+      const activeIndexes = new Set(visibleCandidates.filter(item => item.left < viewportWidth * 0.88).map(item => item.index));
+      journeyCards.forEach((card, index) => {
+        const isRevealed = progress > 0.015 && activeIndexes.has(index);
+        card.classList.toggle('is-revealed', isRevealed);
+        card.style.zIndex = String(index + 1);
+      });
+      journeyFrame = 0;
+    }
+
+    function requestJourneyUpdate() {
+      if (!journeyFrame) journeyFrame = requestAnimationFrame(updateJourney);
+    }
+    if (journeySection && journeyPin && journeyTrack) {
+      sizeJourney();
+      window.addEventListener('scroll', requestJourneyUpdate, { passive: true });
+      window.addEventListener('resize', sizeJourney, { passive: true });
+      if ('ResizeObserver' in window) {
+        const journeyResizeObserver = new ResizeObserver(sizeJourney);
+        journeyResizeObserver.observe(journeyTrack);
+        journeyResizeObserver.observe(journeyPin);
+      }
+    }
+  </script>
+</body>
+</html>

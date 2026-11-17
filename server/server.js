@@ -18,7 +18,7 @@ const __dirname = path.dirname(__filename);
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/portfolio_aarav';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/portfolio_vanshil';
 
 // Security & SSL Headers Middleware
 app.use((req, res, next) => {

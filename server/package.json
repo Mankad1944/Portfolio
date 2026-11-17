@@ -1,7 +1,7 @@
 {
   "name": "portfolio-server",
   "version": "1.0.0",
-  "description": "Express & MongoDB Backend for Aarav Shah Portfolio SPA",
+  "description": "Express & MongoDB Backend for Vanshil Mankad Portfolio SPA",
   "main": "server.js",
   "type": "module",
   "scripts": {

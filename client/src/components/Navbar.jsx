@@ -22,7 +22,7 @@ export const Navbar = () => {
     <nav className={`nav ${scrolled ? 'scrolled' : ''}`}>
       <div className="wrap nav-inner">
         <a href="#home" className="brand" onClick={closeMenu}>
-          {personal.shortName || 'aarav'}<span>.</span>
+          {personal.shortName || 'vanshil'}<span>.</span>
         </a>
 
         <div className={`nav-links ${menuOpen ? 'open' : ''}`} id="navLinks">

@@ -6,7 +6,7 @@ import { Send, CheckCircle2, AlertCircle, Copy, Check } from 'lucide-react';
 export const Contact = () => {
   const { data } = usePortfolioData();
   const personal = data.personal || {
-    email: 'aarav@example.com',
+    email: 'vanshil@example.com',
     locationShort: 'Ahmedabad, Gujarat, India',
     phone: '+91 98765 43210',
   };

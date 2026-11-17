@@ -4,9 +4,9 @@ import { usePortfolioData } from '../context/PortfolioDataContext';
 export const Footer = () => {
   const { data } = usePortfolioData();
   const personal = data.personal || {
-    name: 'Aarav Shah',
-    shortName: 'aarav',
-    email: 'aarav@example.com',
+    name: 'Vanshil Mankad',
+    shortName: 'vanshil',
+    email: 'vanshil@example.com',
     phone: '+91 98765 43210',
     locationShort: 'Ahmedabad, Gujarat, India',
   };
@@ -16,7 +16,7 @@ export const Footer = () => {
       <div className="wrap footer-main">
         <div className="footer-brand">
           <a className="brand" href="#home">
-            {personal.shortName || 'aarav'}<span>.</span>
+            {personal.shortName || 'vanshil'}<span>.</span>
           </a>
           <p>
             Building useful digital experiences, one clean component at a time.

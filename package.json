@@ -1,12 +1,12 @@
 {
   "name": "portfolio-mern-root",
   "version": "1.0.0",
-  "description": "Aarav Shah Portfolio SPA - Pure MERN Stack",
+  "description": "Vanshil Mankad Portfolio SPA - Pure MERN Stack",
   "scripts": {
     "dev": "npm --prefix client run dev",
-    "dev:all": "start npm --prefix client run dev && start npm --prefix server run dev",
-    "build": "npm --prefix client run build",
-    "server": "npm --prefix server run dev",
-    "start": "npm --prefix server run start"
+    "dev:server": "npm --prefix server run dev",
+    "build": "npm --prefix client install && npm --prefix client run build",
+    "start": "npm --prefix server run start",
+    "postinstall": "npm --prefix client install && npm --prefix server install"
   }
 }
